@@ -6,8 +6,11 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
     public float lookRadius = 10.0f;
-    public int patron;
-    float algo;
+    public Transform[] points; //Puntos para Nav
+    private int destPoint = 0;
+    public Transform directDest; //Destino unico para random Nav
+    public int enemNav = 0; //Tipo de Navegación
+    float timer;
 
     Transform target;
     NavMeshAgent agent;
@@ -17,48 +20,84 @@ public class EnemyController : MonoBehaviour
     {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
-        anim = gameObject.GetComponent<Animator>();
+
+        agent.autoBraking = false;
     }
 	
 	void Update ()
     {
         float distance = Vector3.Distance(target.position, transform.position);
+        anim.SetBool("camina", true);
 
         if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
-            anim.SetBool("camina", true);
-            if (distance <= agent.stoppingDistance)
+            
+            /*if (distance <= agent.stoppingDistance)
             {
                 FaceTarget();
                 anim.SetBool("camina", false);
-            }
-            
+            }*/
         }
         else
         {
-            anim.SetBool("camina", false);
+            if (enemNav == 1)
+            {
+                agent.destination = directDest.position;
+
+                timer += Time.deltaTime;
+                if (timer >= 4.0f)
+                {
+                    WaitAndPrint();
+                    timer = 0;
+                }
+            }
+            else if (enemNav == 2)
+            {
+                agent.destination = points[destPoint].position;
+
+                if (!agent.pathPending)
+                {
+                    if (agent.remainingDistance <= agent.stoppingDistance)
+                    {
+                        if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
+                        {
+                            GotoNextPoint();
+                        }
+                    }
+                }
+            }
+            //anim.SetBool("camina", false);
         }
-        /*else
-        { ///Movimiento cuando no ataca
-            if(patron == 1)
-            {
-                transform.Translate(Vector3.forward * Time.deltaTime * .5f);
-                transform.Rotate(0, Time.deltaTime * 10, 0);
-            }
-            if(patron == 2)
-            {
-                transform.Translate(Vector3.forward * Time.deltaTime * .5f);
-                transform.Rotate(0, 180, 0);
-            }
-        }*/
     }
 
-    /*IEnumerator Example()
+    void WaitAndPrint()
     {
-        transform.Rotate(0, 180, 0);
-        yield return new WaitForSeconds(5);
-    }*/
+        int randNav = Random.Range(0, 4);
+        switch (randNav)
+        {
+            case 0:
+                transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y + 90, transform.rotation.z);
+                break;
+            case 1:
+                transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y - 90, transform.rotation.z);
+                break;
+            case 2:
+                transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
+                break;
+            case 3:
+                transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y + 180, transform.rotation.z);
+                break;
+        }
+    }
+
+    void GotoNextPoint()
+    {
+        if (points.Length == 0)
+            return;
+
+        destPoint = (destPoint + 1) % points.Length;
+    }
 
     void FaceTarget()
     {
