@@ -12,6 +12,10 @@ public class EnemyController : MonoBehaviour
     public int enemNav = 0; //Tipo de Navegación
     float timer;
 
+    //bool enterado;
+    public int vida;
+    public float enemyDistanceRun = 20.0f;
+
     Transform target;
     NavMeshAgent agent;
     public Animator anim;
@@ -31,7 +35,16 @@ public class EnemyController : MonoBehaviour
 
         if (distance <= lookRadius)
         {
-            agent.SetDestination(target.position);
+            if (vida > 40)
+            {
+                agent.SetDestination(target.position);
+            }
+            else
+            {
+                Vector3 dirToPlayer = transform.position - target.transform.position;
+                Vector3 newPos = transform.position + dirToPlayer;
+                agent.SetDestination(newPos);
+            }
             
             /*if (distance <= agent.stoppingDistance)
             {
@@ -39,7 +52,7 @@ public class EnemyController : MonoBehaviour
                 anim.SetBool("camina", false);
             }*/
         }
-        else
+        else 
         {
             if (enemNav == 1)
             {
