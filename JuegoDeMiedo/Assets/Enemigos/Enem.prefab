@@ -281,6 +281,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1318168462904394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4289881890285910}
+  m_Layer: 0
+  m_Name: objetivo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1350505372924124
 GameObject:
   m_ObjectHideFlags: 1
@@ -1501,6 +1516,19 @@ Transform:
   m_Father: {fileID: 4474348800210182}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4289881890285910
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1318168462904394}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4357390758057688}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4291683153785770
 Transform:
   m_ObjectHideFlags: 1
@@ -1554,6 +1582,7 @@ Transform:
   m_Children:
   - {fileID: 4938673751173118}
   - {fileID: 4153105858589138}
+  - {fileID: 4289881890285910}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2264,7 +2293,7 @@ Animator:
   m_GameObject: {fileID: 1893425297716514}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 545bca703e80a4e49923d86e149f4a34, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0cd1e0f57beef444eb2a531cfb2763e1, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2285,7 +2314,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 10
-  patron: 2
+  points:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  directDest: {fileID: 4289881890285910}
+  enemNav: 1
+  vida: 100
+  enemyDistanceRun: 20
+  anim: {fileID: 95353804283170304}
 --- !u!136 &136831567351130476
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2327,7 +2366,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100002, guid: 545bca703e80a4e49923d86e149f4a34, type: 3}
+  - {fileID: 2100000, guid: f020fcbeb92bd62499a4c9ef2a862e62, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2384,7 +2423,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 545bca703e80a4e49923d86e149f4a34, type: 3}
+  - {fileID: 2100000, guid: f020fcbeb92bd62499a4c9ef2a862e62, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

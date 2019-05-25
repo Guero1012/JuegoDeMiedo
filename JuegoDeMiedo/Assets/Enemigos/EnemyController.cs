@@ -5,22 +5,31 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public float lookRadius = 10.0f;
-    public Transform[] points; //Puntos para Nav
-    private int destPoint = 0;
-    public Transform directDest; //Destino unico para random Nav
-    public int enemNav = 0; //Tipo de Navegación
-    float timer;
+    public float lookRadius = 10.0f; //Radio para buscar al jugador
 
-    //bool enterado;
-    public int vida;
+    public int enemNav = 0; //Tipo de Navegación
+    
+    public Transform[] points; //Puntos para Navegacion
+    private int destPoint = 0; //A cual punto va
+    public Transform directDest; //Destino unico para random Nav
+    
+    float temporizador;
+
+    public int TipoEnemigo;
+
+    public int life;
     public float enemyDistanceRun = 20.0f;
 
     Transform target;
     NavMeshAgent agent;
     public Animator anim;
 
-	void Start ()
+    void Awake()
+    {
+        
+    }
+
+    void Start ()
     {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
@@ -33,9 +42,11 @@ public class EnemyController : MonoBehaviour
         float distance = Vector3.Distance(target.position, transform.position);
         anim.SetBool("camina", true);
 
-        if (distance <= lookRadius)
+        if (distance <= lookRadius) //Encontró al jugador y lo que persigue
         {
-            if (vida > 40)
+            agent.SetDestination(target.position);
+
+            /*if (life > 40)
             {
                 agent.SetDestination(target.position);
             }
@@ -44,13 +55,13 @@ public class EnemyController : MonoBehaviour
                 Vector3 dirToPlayer = transform.position - target.transform.position;
                 Vector3 newPos = transform.position + dirToPlayer;
                 agent.SetDestination(newPos);
-            }
-            
-            /*if (distance <= agent.stoppingDistance)
-            {
-                FaceTarget();
-                anim.SetBool("camina", false);
             }*/
+            
+            if (distance <= agent.stoppingDistance)
+            {
+                Debug.Log("ses");
+                FaceTarget();
+            }
         }
         else 
         {
@@ -58,11 +69,11 @@ public class EnemyController : MonoBehaviour
             {
                 agent.destination = directDest.position;
 
-                timer += Time.deltaTime;
-                if (timer >= 4.0f)
+                temporizador += Time.deltaTime;
+                if (temporizador >= 4.0f)
                 {
                     WaitAndPrint();
-                    timer = 0;
+                    temporizador = 0;
                 }
             }
             else if (enemNav == 2)
@@ -80,7 +91,6 @@ public class EnemyController : MonoBehaviour
                     }
                 }
             }
-            //anim.SetBool("camina", false);
         }
     }
 
