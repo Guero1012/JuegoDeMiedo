@@ -7,126 +7,170 @@ public class EnemyController : MonoBehaviour
 {
     public float lookRadius = 10.0f; //Radio para buscar al jugador
 
-    public int enemNav = 0; //Tipo de Navegación
-    
-    public Transform[] points; //Puntos para Navegacion
-    private int destPoint = 0; //A cual punto va
-    public Transform directDest; //Destino unico para random Nav
-    
+    public int tipoNavegacion = 0; //Tipo de patrullaje
+    public Transform[] puntos; //Puntos para patrullaje
+    private int destinoActual = 0; //A cual punto va
+    public Transform directDest; //Destino unico para patrullaje aletoria
+
+    public GameObject ataqueCol;
+
     float temporizador;
+    float t_ataque;
 
-    public int TipoEnemigo;
+    public bool jefe;
+    bool atacando;
+    int vidaEnemigo;
 
-    public int life;
-    public float enemyDistanceRun = 20.0f;
-
-    Transform target;
-    NavMeshAgent agent;
+    Transform objetivo;
+    NavMeshAgent zombi;
     public Animator anim;
 
     void Awake()
     {
-        
+        if (jefe)
+            vidaEnemigo = 300;
+        else
+            vidaEnemigo = 100;
     }
 
     void Start ()
     {
-        target = PlayerManager.instance.player.transform;
-        agent = GetComponent<NavMeshAgent>();
-
-        agent.autoBraking = false;
+        objetivo = PlayerManager.instance.player.transform;
+        zombi = GetComponent<NavMeshAgent>();
     }
 	
 	void Update ()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
+        float distancia = Vector3.Distance(objetivo.position, transform.position);
         anim.SetBool("camina", true);
 
-        if (distance <= lookRadius) //Encontró al jugador y lo que persigue
+        if (distancia <= lookRadius) //Encontró al jugador y lo que persigue
         {
-            agent.SetDestination(target.position);
+            zombi.SetDestination(objetivo.position);
 
-            /*if (life > 40)
+            if (distancia <= zombi.stoppingDistance + 0.25f && !atacando) //Llegó con el jugador y lo ataca
             {
-                agent.SetDestination(target.position);
+                if(!jefe)
+                    StartCoroutine(AtacarJugador());
+                else
+                    StartCoroutine(AtacarJugadorB());
+
+                atacando = true;
+                MirarObjetivo();
             }
             else
-            {
-                Vector3 dirToPlayer = transform.position - target.transform.position;
-                Vector3 newPos = transform.position + dirToPlayer;
-                agent.SetDestination(newPos);
-            }*/
-            
-            if (distance <= agent.stoppingDistance)
-            {
-                Debug.Log("ses");
-                FaceTarget();
-            }
+                anim.SetBool("ataca", false);
         }
-        else 
+        else //Patrullaje
         {
-            if (enemNav == 1)
+            if (tipoNavegacion == 1)
             {
-                agent.destination = directDest.position;
+                zombi.destination = directDest.position;
 
                 temporizador += Time.deltaTime;
                 if (temporizador >= 4.0f)
                 {
-                    WaitAndPrint();
+                    CambioDireccion();
                     temporizador = 0;
                 }
             }
-            else if (enemNav == 2)
+            else if (tipoNavegacion == 2)
             {
-                agent.destination = points[destPoint].position;
+                zombi.destination = puntos[destinoActual].position;
 
-                if (!agent.pathPending)
+                if (!zombi.pathPending)
                 {
-                    if (agent.remainingDistance <= agent.stoppingDistance)
+                    if (zombi.remainingDistance <= zombi.stoppingDistance)
                     {
-                        if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
-                        {
-                            GotoNextPoint();
-                        }
+                        if (!zombi.hasPath || zombi.velocity.sqrMagnitude == 0f)
+                            SiguientePunto();
                     }
                 }
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1) && !jefe)
+            RecibirDanio(vidaEnemigo);
+
+        if(Input.GetKeyDown(KeyCode.Alpha2) && jefe)
+            RecibirDanio(vidaEnemigo);
     }
 
-    void WaitAndPrint()
+    void CambioDireccion()
     {
         int randNav = Random.Range(0, 4);
         switch (randNav)
         {
-            case 0:
-                transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y + 90, transform.rotation.z);
+            case 0: transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y + 90, transform.rotation.z);
                 break;
-            case 1:
-                transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y - 90, transform.rotation.z);
+            case 1: transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y - 90, transform.rotation.z);
                 break;
-            case 2:
-                transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
+            case 2: transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
                 break;
-            case 3:
-                transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y + 180, transform.rotation.z);
+            case 3: transform.rotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y + 180, transform.rotation.z);
                 break;
         }
     }
 
-    void GotoNextPoint()
+    void SiguientePunto()
     {
-        if (points.Length == 0)
+        if (puntos.Length == 0)
             return;
-
-        destPoint = (destPoint + 1) % points.Length;
+        destinoActual = (destinoActual + 1) % puntos.Length;
     }
 
-    void FaceTarget()
+    void MirarObjetivo()
     {
-        Vector3 direction = (target.position - transform.position).normalized;
+        Vector3 direction = (objetivo.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
+
+    IEnumerator AtacarJugador()
+    {
+        t_ataque += Time.deltaTime;
+        anim.SetBool("ataca", true);
+        yield return new WaitForSeconds(1.0f);
+        ataqueCol.SetActive(true);
+        yield return new WaitForSeconds(1.6f);
+        ataqueCol.SetActive(false);
+        t_ataque = 0;
+        atacando = false;
+    }
+
+    IEnumerator AtacarJugadorB()
+    {
+        t_ataque += Time.deltaTime;
+        anim.SetBool("ataca", true);
+        yield return new WaitForSeconds(1.5f);
+        ataqueCol.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        ataqueCol.SetActive(false);
+        yield return new WaitForSeconds(2.6f);
+        t_ataque = 0;
+        atacando = false;
+    }
+
+    void RecibirDanio(int cantidad_d)
+    {
+        vidaEnemigo -= cantidad_d;
+        if(vidaEnemigo <= 0)
+        {
+            zombi.speed = 0;
+            anim.SetBool("muerto", true);
+            if (jefe)
+                StartCoroutine(Revivivendo());
+        }
+    }
+
+    IEnumerator Revivivendo()
+    {
+        yield return new WaitForSeconds(5.0f);
+        anim.SetBool("muerto", false);
+        yield return new WaitForSeconds(3.1f);
+        zombi.speed = 2;
+        //anim.SetBool("muerto", false);
+        vidaEnemigo = 300;
     }
 
     void OnDrawGizmosSelected()
