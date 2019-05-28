@@ -129,11 +129,13 @@ public class EnemyController : MonoBehaviour
     IEnumerator AtacarJugador()
     {
         t_ataque += Time.deltaTime;
+        zombi.speed = 0;
         anim.SetBool("ataca", true);
         yield return new WaitForSeconds(1.0f);
         ataqueCol.SetActive(true);
         yield return new WaitForSeconds(1.6f);
         ataqueCol.SetActive(false);
+        zombi.speed = 2;
         t_ataque = 0;
         atacando = false;
     }
@@ -141,12 +143,14 @@ public class EnemyController : MonoBehaviour
     IEnumerator AtacarJugadorB()
     {
         t_ataque += Time.deltaTime;
+        zombi.speed = 0;
         anim.SetBool("ataca", true);
         yield return new WaitForSeconds(1.5f);
         ataqueCol.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         ataqueCol.SetActive(false);
         yield return new WaitForSeconds(2.6f);
+        zombi.speed = 2;
         t_ataque = 0;
         atacando = false;
     }
