@@ -376,6 +376,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1877235012735628, guid: 8a79944f6095be04fbe8596cc2cc22f0, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a79944f6095be04fbe8596cc2cc22f0, type: 2}
   m_IsPrefabAsset: 0
