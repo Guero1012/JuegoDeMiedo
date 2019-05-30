@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -306,6 +306,134 @@ Transform:
   m_Father: {fileID: 1590146391}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &805869775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 805869777}
+  - component: {fileID: 805869776}
+  m_Layer: 0
+  m_Name: Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &805869776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 805869775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f96478ce125bf4f871513a67de2a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armas:
+  - nombre: "Pu\xF1o"
+    icono: {fileID: 2800000, guid: 85c1be5e8e59810498bdb18a67174fde, type: 3}
+    prefab: {fileID: 1379925864872550, guid: 502d2b03bd3d09149b536277d7cff47f, type: 2}
+  - nombre: Cuchillo
+    icono: {fileID: 2800000, guid: 4d7a700575887aa469c047d9c5aa6cea, type: 3}
+    prefab: {fileID: 1218357431182778, guid: c3f70216d64c13640a0c89afaa3560d7, type: 2}
+  - nombre: Macana
+    icono: {fileID: 2800000, guid: 276f4938dc150c4438283ed8fff592ad, type: 3}
+    prefab: {fileID: 1572027175869618, guid: 0b8c2f8d4fcbd6547a3ebc2e81248432, type: 2}
+  - nombre: Hacha
+    icono: {fileID: 2800000, guid: e1a7ffbbf06278a498993ea5361144f4, type: 3}
+    prefab: {fileID: 1234263529417418, guid: c1c8564706c86214aad55d3ff93f33fe, type: 2}
+  - nombre: Pistola
+    icono: {fileID: 2800000, guid: de5b846275bad6e4f9a9b9d5c481cacd, type: 3}
+    prefab: {fileID: 1001820827220950, guid: 3d04a1b6c28bb1e459cc72898bfd5af9, type: 2}
+  - nombre: Escopeta
+    icono: {fileID: 2800000, guid: 2797a8b3688c71e43baafecd3ca5144e, type: 3}
+    prefab: {fileID: 1009897558049962, guid: 6c551082551641046a1ced38c0654867, type: 2}
+  tamanoBoton: {x: 50, y: 50}
+  propagacion: 100
+  iconoEstilo:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 0}
+    m_FontSize: 0
+    m_FontStyle: 0
+    m_Alignment: 0
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
+--- !u!4 &805869777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 805869775}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &837051877
 Prefab:
   m_ObjectHideFlags: 0
@@ -431,6 +559,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28937d1efea1c94c8f1efbf6fcc4939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1651553291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 473804543}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1651553292}
+  m_Layer: 0
+  m_Name: Missing Prefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1651553292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 473804543}
+  m_GameObject: {fileID: 1651553291}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1814980276}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1814980276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400108, guid: 209685586482efc498a5b49b0e95bcb6,
