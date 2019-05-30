@@ -185,4 +185,28 @@ public class EnemyController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
+
+    void OnTriggerEnter(Collider _col)
+    {
+        if(_col.tag == "Cuchillo")
+        {
+            vidaEnemigo -= 10;
+        }
+        if (_col.tag == "Macana")
+        {
+            vidaEnemigo -= 12;
+        }
+        if (_col.tag == "Hacha")
+        {
+            vidaEnemigo -= 20;
+        }
+        if (_col.tag == "BalaPistola")
+        {
+            vidaEnemigo -= 15;
+        }
+        if (_col.tag == "BalaEscopeta")
+        {
+            vidaEnemigo -= 25;
+        }
+    }
 }

@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
+  - component: {fileID: 534669906}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -310,10 +311,25 @@ Transform:
   m_LocalRotation: {x: 0.051289745, y: -0, z: -0, w: 0.99868387}
   m_LocalPosition: {x: 0, y: 1.99, z: -9.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1657955029}
   m_Father: {fileID: 1590146391}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 5.88, y: 0, z: 0}
+--- !u!114 &534669906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006aecaef2f4a484386017deea6f8b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefapProjectil: {fileID: 4256218944207202, guid: 4c6a8c04314f1ab47a4c4afb4a1fa2a1,
+    type: 2}
+  instancia: {fileID: 1657955029}
 --- !u!1001 &664779047
 Prefab:
   m_ObjectHideFlags: 0
@@ -669,6 +685,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 164.701
       objectReference: {fileID: 0}
+    - target: {fileID: 1572027175869618, guid: 0b8c2f8d4fcbd6547a3ebc2e81248432, type: 2}
+      propertyPath: m_TagString
+      value: Macana
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b8c2f8d4fcbd6547a3ebc2e81248432, type: 2}
   m_IsPrefabAsset: 0
@@ -732,6 +752,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 0.3091263
       objectReference: {fileID: 0}
+    - target: {fileID: 1218357431182778, guid: c3f70216d64c13640a0c89afaa3560d7, type: 2}
+      propertyPath: m_TagString
+      value: Cuchillo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3f70216d64c13640a0c89afaa3560d7, type: 2}
   m_IsPrefabAsset: 0
@@ -789,6 +813,10 @@ Prefab:
     - target: {fileID: 4164638306685690, guid: c1c8564706c86214aad55d3ff93f33fe, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.19990186
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234263529417418, guid: c1c8564706c86214aad55d3ff93f33fe, type: 2}
+      propertyPath: m_TagString
+      value: Hacha
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1c8564706c86214aad55d3ff93f33fe, type: 2}
@@ -904,6 +932,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28937d1efea1c94c8f1efbf6fcc4939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1590146393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1590146389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006aecaef2f4a484386017deea6f8b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefapProjectil: {fileID: 4936005318856226, guid: 4c6a8c04314f1ab47a4c4afb4a1fa2a1,
+    type: 2}
+  instancia: {fileID: 0}
+--- !u!1 &1657955028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1657955029}
+  m_Layer: 0
+  m_Name: Instancia
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1657955029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1657955028}
+  m_LocalRotation: {x: -0.051289745, y: -0, z: -0, w: 0.99868387}
+  m_LocalPosition: {x: 0.040693447, y: -0.62809145, z: 10.326868}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 534669905}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1794302299 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1234263529417418, guid: c1c8564706c86214aad55d3ff93f33fe,
