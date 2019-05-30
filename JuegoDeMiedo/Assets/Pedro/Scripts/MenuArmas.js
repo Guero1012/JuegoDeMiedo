@@ -81,5 +81,5 @@ function SwapWeapons(to : int)
     armas[armaSeleccionada].prefab.SetActive(false);
     armas[to].prefab.SetActive(true);
     armaSeleccionada = to;
-    //Play armas[to].animation on your animation component. Make sure you uncomment it in the class above
+    //armas[to].animation;
 }
