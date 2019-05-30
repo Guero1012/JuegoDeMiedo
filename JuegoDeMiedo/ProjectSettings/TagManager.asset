@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Cuchillo
+  - Macana
+  - Hacha
+  - BalaPistola
+  - BalaEscopeta
   layers:
   - Default
   - TransparentFX
