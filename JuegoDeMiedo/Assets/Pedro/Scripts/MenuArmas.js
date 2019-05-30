@@ -28,7 +28,7 @@ function Start()
 
 function Update()
 {
-    if(Input.GetKeyDown("z"))
+    if(Input.GetKeyDown("1"))
     {
         if(fxClamp == 0) fxClamp = 1;
         else fxClamp = 0;
