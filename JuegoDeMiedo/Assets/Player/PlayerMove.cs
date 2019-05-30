@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -26,17 +27,37 @@ public class PlayerMove : MonoBehaviour
     /*public bool yaAgachado;
     public bool mantener;*/
 
+	public float resistencia = 0;
+	public bool tired;
+	public float targetTime = 1.0f; 
+	public float resistenciaRegen = 1;
+	public float resistenciaRegen2 = 1;
+	public AudioClip caerseClip;
+	AudioSource sonidito;
+	public float resistenciaDec = 1;
+	public int cansado;
+	public float maxRes;
+	public bool caerse;
+	Animator anim;
+
     private void Awake()
     {
         walkSpeed = 6;
         runSpeed = 25;
         charController = GetComponent<CharacterController>();
+		sonidito = GetComponent<AudioSource> ();
+		tired = true;
+		caerse = false;
+		anim = GetComponent<Animator> ();
     }
 
     private void Update()
     {
         PlayerMovement();
         Agachar();
+		Stamina ();
+		Fall ();
+
     }
 
     private void Agachar()
@@ -85,8 +106,65 @@ public class PlayerMove : MonoBehaviour
         }*/
     }
 
+	private void Fall()
+	{
+		targetTime -= Time.deltaTime;
+		if (resistencia <= Random.Range(10,15) ) 
+		{
+			caerse = true;
+		}
+		if (caerse == true) 
+		{
+			Debug.Log ("se cayo");
+			movementSpeed = 0;
+			if (targetTime <= 0) 
+			{
+				targetTime = 4.0f;
+				movementSpeed = Mathf.Lerp (movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
+				caerse = false;
+			}
+		}
+
+	}
+
+	private void Stamina()
+	{
+		
+		if (walkSpeed == 0) 
+		{
+			resistencia += Time.deltaTime / resistenciaRegen2;
+		}
+		if (resistencia >= maxRes) 
+		{
+			resistencia = maxRes;
+		}
+
+		if(resistencia <= cansado && !sonidito.isPlaying && tired == true)
+		{
+			AudioSource.PlayClipAtPoint(caerseClip, transform.position);
+			Debug.Log ("audio");
+			tired = false;
+
+		}
+		else
+		{
+			sonidito.Stop ();
+		}
+
+		if (resistencia >= cansado) 
+		{
+			tired = true;
+		}
+
+		if (resistencia <= 0) 
+		{
+			resistencia = 0;
+		}
+	}
+
     private void PlayerMovement()
     {
+		targetTime -= Time.deltaTime;
         float horizInput = Input.GetAxis(horizontalInputName);
         float vertInput = Input.GetAxis(verticalInputName);
 
@@ -98,16 +176,28 @@ public class PlayerMove : MonoBehaviour
         if ((vertInput != 0 || horizInput != 0) && OnSlope())
             charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
 
-        SetMovementSpeed();
-        JumpInput();
+
+		SetMovementSpeed ();
+		JumpInput ();
+		
+        
     }
 
     private void SetMovementSpeed()
     {
-        if (Input.GetKey(runKey))
-            movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
-        else
-            movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
+		
+		if (Input.GetKey (runKey)) 
+		{
+			movementSpeed = Mathf.Lerp (movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
+			resistencia-=Time.deltaTime / resistenciaDec;
+
+		} 
+		else
+		{
+			movementSpeed = Mathf.Lerp (movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
+			resistencia+=Time.deltaTime / resistenciaRegen;
+		}
+
     }
 
     private bool OnSlope()

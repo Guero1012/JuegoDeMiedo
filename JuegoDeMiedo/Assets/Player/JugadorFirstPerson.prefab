@@ -135,6 +135,8 @@ MonoBehaviour:
   mouseYInputName: Mouse Y
   mouseSensivity: 150
   playerBody: {fileID: 4835963177248474}
+  agacharKey: 0
+  agachado: 0
 --- !u!114 &114722648223043916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -180,6 +182,13 @@ MonoBehaviour:
     m_RotationOrder: 4
   jumpMultiplier: 10
   jumpKey: 32
+  agacharKey: 0
+  resistencia: 100
+  caerse: 0
+  targetTime: 1
+  resistenciaRegen: 1
+  resistenciaRegen2: 1
+  resistenciaDec: 1
 --- !u!143 &143724573019390360
 CharacterController:
   m_ObjectHideFlags: 1
