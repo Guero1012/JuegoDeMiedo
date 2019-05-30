@@ -432,6 +432,15 @@ Prefab:
       propertyPath: puntos.Array.data[1]
       value: 
       objectReference: {fileID: 1128094371}
+    - target: {fileID: 1281070237634186, guid: 1e01193c87eedf24e87c7083954c309f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65136658868091280, guid: 1e01193c87eedf24e87c7083954c309f,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e01193c87eedf24e87c7083954c309f, type: 2}
   m_IsPrefabAsset: 0
@@ -693,6 +702,15 @@ Prefab:
       propertyPath: puntos.Array.data[1]
       value: 
       objectReference: {fileID: 1128094371}
+    - target: {fileID: 1268218540159458, guid: 9ef7b7f338640f24e9da6160fb26e141, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65757215257445480, guid: 9ef7b7f338640f24e9da6160fb26e141,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ef7b7f338640f24e9da6160fb26e141, type: 2}
   m_IsPrefabAsset: 0

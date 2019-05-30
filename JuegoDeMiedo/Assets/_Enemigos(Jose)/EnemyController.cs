@@ -37,6 +37,9 @@ public class EnemyController : MonoBehaviour
     {
         objetivo = PlayerManager.instance.player.transform;
         zombi = GetComponent<NavMeshAgent>();
+
+        Debug.Log("Presiona '1' para matar al enemigo");
+        Debug.Log("Presiona '2' para matar al jefe");
     }
 	
 	void Update ()
@@ -126,7 +129,7 @@ public class EnemyController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 
-    IEnumerator AtacarJugador()
+    IEnumerator AtacarJugador() //Función para que el jugador ataque
     {
         t_ataque += Time.deltaTime;
         zombi.speed = 0;
@@ -140,7 +143,7 @@ public class EnemyController : MonoBehaviour
         atacando = false;
     }
 
-    IEnumerator AtacarJugadorB()
+    IEnumerator AtacarJugadorB() //Función para que el jefe ataque
     {
         t_ataque += Time.deltaTime;
         zombi.speed = 0;
@@ -155,7 +158,7 @@ public class EnemyController : MonoBehaviour
         atacando = false;
     }
 
-    void RecibirDanio(int cantidad_d)
+    void RecibirDanio(int cantidad_d) //Funcíon para que el enemigo reciba una canditdad de daño asignada. 
     {
         vidaEnemigo -= cantidad_d;
         if(vidaEnemigo <= 0)
@@ -167,7 +170,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    IEnumerator Revivivendo()
+    IEnumerator Revivivendo() //El jefe después de de un tiempo resusitará
     {
         yield return new WaitForSeconds(5.0f);
         anim.SetBool("muerto", false);
