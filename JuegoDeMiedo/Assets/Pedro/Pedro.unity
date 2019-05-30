@@ -955,7 +955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1657955029}
   m_Layer: 0
-  m_Name: Instancia
+  m_Name: InstanciaPistola
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -968,8 +968,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1657955028}
   m_LocalRotation: {x: -0.051289745, y: -0, z: -0, w: 0.99868387}
-  m_LocalPosition: {x: 0.040693447, y: -0.62809145, z: 10.326868}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.139, y: -0.2968, z: 9.7592}
+  m_LocalScale: {x: 1.0673, y: 1.0673, z: 1.0673}
   m_Children: []
   m_Father: {fileID: 534669905}
   m_RootOrder: 0
