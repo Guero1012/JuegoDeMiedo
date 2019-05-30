@@ -12,6 +12,7 @@ public class AppsManagement : MonoBehaviour {
     public Sprite[] LintSprites;
 
     public GameObject PanelVida;
+    public GameObject PanelAjustes;
 
     AudioSource myAudio;
     public AudioClip click;
@@ -35,6 +36,17 @@ public class AppsManagement : MonoBehaviour {
     {
         myAudio.PlayOneShot(click);
         PanelVida.SetActive(true);
+    }
+
+    public void AppAjustes()
+    {
+        myAudio.PlayOneShot(click);
+        PanelAjustes.SetActive(true);
+    }
+
+    public void GenericApp()
+    {
+        myAudio.PlayOneShot(click);
     }
 
     public void BotonLinterna()
@@ -68,6 +80,21 @@ public class AppsManagement : MonoBehaviour {
             PanelVida.SetActive(false);
         }
 
+        if (PanelAjustes.activeSelf)
+        {
+            PanelAjustes.SetActive(false);
+        }
+    }
 
+    public void MainMenu()
+    {
+        myAudio.PlayOneShot(click);
+        //LoadScene
+    }
+
+    public void ExitGame()
+    {
+        myAudio.PlayOneShot(click);
+        Application.Quit();
     }
 }
