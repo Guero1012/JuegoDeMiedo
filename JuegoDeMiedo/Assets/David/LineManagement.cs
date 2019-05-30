@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LineManagement : MonoBehaviour {
+
+    public float vida;
 
     public int vel;
     public int vel2;
@@ -16,7 +19,8 @@ public class LineManagement : MonoBehaviour {
     public LineRenderer HealthBar;
     public LineRenderer FearBar;
 
-    public bool useCurve = true;
+    public RawImage IndicadorVida;
+    public Texture[] estados;
 
     // Use this for initialization
     void Start () {
@@ -28,6 +32,40 @@ public class LineManagement : MonoBehaviour {
 
         CambioVida();
         CambioMiedo();
+
+        if(vida <= 0)
+        {
+            cond = 2;
+            cond2 = 2;
+            vel = 0;
+            vel2 = 0;
+
+            IndicadorVida.texture = estados[3];
+        }
+
+        if (vida >= 1 && vida <= 25)
+        {
+            IndicadorVida.texture = estados[3];
+            vel = 25;
+        }
+
+        else if(vida >= 26 && vida <= 50)
+        {
+            IndicadorVida.texture = estados[2];
+            vel = 20;
+        }
+
+        else if(vida >= 51 && vida <= 75)
+        {
+            IndicadorVida.texture = estados[1];
+            vel = 15;
+        }
+
+        else if(vida >= 76 && vida <= 100)
+        {
+            IndicadorVida.texture = estados[0];
+            vel = 10;
+        } 
 
 	}
 
@@ -96,6 +134,12 @@ public class LineManagement : MonoBehaviour {
                 cond = 0;
             }
 
+        } else if (cond == 2)
+        {
+            HealthBar.SetPosition(2, new Vector3(-0.1f, 1.5f, -0.13f));
+            HealthBar.SetPosition(3, new Vector3(0, 1.5f, -0.13f));
+            HealthBar.SetPosition(6, new Vector3(0.3f, 1.5f, -0.13f));
+            HealthBar.SetPosition(7, new Vector3(0.4f, 1.5f, -0.13f));
         }
     }
 
@@ -164,6 +208,13 @@ public class LineManagement : MonoBehaviour {
                 cond2 = 0;
             }
 
+        }
+        else if (cond2 == 2)
+        {
+            FearBar.SetPosition(2, new Vector3(-0.1f, 0.65f, -0.13f));
+            FearBar.SetPosition(3, new Vector3(0, 0.65f, -0.13f));
+            FearBar.SetPosition(6, new Vector3(0.3f, 0.65f, -0.13f));
+            FearBar.SetPosition(7, new Vector3(0.4f, 0.65f, -0.13f));
         }
     }
 }

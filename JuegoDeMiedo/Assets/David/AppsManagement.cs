@@ -15,8 +15,10 @@ public class AppsManagement : MonoBehaviour {
     public GameObject BarraVida;
     public GameObject BarraMiedo;
 
-
     public GameObject PanelAjustes;
+
+    [Range(0, 1)] public float Estamina;
+    public Image BarraEstamina;
 
     AudioSource myAudio;
     public AudioClip click;
@@ -28,6 +30,7 @@ public class AppsManagement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        BarraEstamina.fillAmount = Estamina;
 	}
 
     public void AppLinterna()
