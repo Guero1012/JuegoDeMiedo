@@ -40,7 +40,7 @@ public class Camaras : MonoBehaviour {
 		FirstPCamera.GetComponent<Camera> ().enabled = true;
 		SecondCamera.GetComponent<Camera> ().enabled = false;
 		ThirdCamera.GetComponent<Camera> ().enabled = false;
-        ForCamera.GetComponent<Camera>().enabled = false;
+        /*ForCamera.GetComponent<Camera>().enabled = false;
         FivCamera.GetComponent<Camera>().enabled = false;
         SixCamera.GetComponent<Camera>().enabled = false;
         SevenCamera.GetComponent<Camera>().enabled = false;
@@ -48,7 +48,7 @@ public class Camaras : MonoBehaviour {
         NainCamera.GetComponent<Camera>().enabled = false;
         TenCamera.GetComponent<Camera>().enabled = false;
         ElevenCamera.GetComponent<Camera>().enabled = false;
-        TwelveCamera.GetComponent<Camera>().enabled = false;
+        TwelveCamera.GetComponent<Camera>().enabled = false;*/
 
         guiObject.SetActive (false);
 	}
@@ -66,7 +66,7 @@ public class Camaras : MonoBehaviour {
 
                 con += 0.5f;
                 
-                if(con==12)
+                if(con==3)
                 {
                     con = 0;
                 }
@@ -84,16 +84,16 @@ public class Camaras : MonoBehaviour {
 				SecondCamera.GetComponent<Camera> ().enabled = false;
 				ThirdCamera.GetComponent<Camera> ().enabled = false;
                 ForCamera.GetComponent<Camera>().enabled = false;
-                FivCamera.GetComponent<Camera>().enabled = false;
-                SixCamera.GetComponent<Camera>().enabled = false;
-                SevenCamera.GetComponent<Camera>().enabled = false;
-                EiCamera.GetComponent<Camera>().enabled = false;
-                NainCamera.GetComponent<Camera>().enabled = false;
-                TenCamera.GetComponent<Camera>().enabled = false;
-                ElevenCamera.GetComponent<Camera>().enabled = false;
-                TwelveCamera.GetComponent<Camera>().enabled = false;
+                /* FivCamera.GetComponent<Camera>().enabled = false;
+                 SixCamera.GetComponent<Camera>().enabled = false;
+                 SevenCamera.GetComponent<Camera>().enabled = false;
+                 EiCamera.GetComponent<Camera>().enabled = false;
+                 NainCamera.GetComponent<Camera>().enabled = false;
+                 TenCamera.GetComponent<Camera>().enabled = false;
+                 ElevenCamera.GetComponent<Camera>().enabled = false;
+                 TwelveCamera.GetComponent<Camera>().enabled = false;*/
             }
-			else //Otra camara debe estar activa
+            else //Otra camara debe estar activa
 			{
 				if(switchCam == true)
 				{
@@ -103,14 +103,14 @@ public class Camaras : MonoBehaviour {
                         SecondCamera.GetComponent<Camera>().enabled = false;
                         ThirdCamera.GetComponent<Camera>().enabled = true;
                         ForCamera.GetComponent<Camera>().enabled = false;
-                        FivCamera.GetComponent<Camera>().enabled = false;
+                       /* FivCamera.GetComponent<Camera>().enabled = false;
                         SixCamera.GetComponent<Camera>().enabled = false;
                         SevenCamera.GetComponent<Camera>().enabled = false;
                         EiCamera.GetComponent<Camera>().enabled = false;
                         NainCamera.GetComponent<Camera>().enabled = false;
                         TenCamera.GetComponent<Camera>().enabled = false;
                         ElevenCamera.GetComponent<Camera>().enabled = false;
-                        TwelveCamera.GetComponent<Camera>().enabled = false;
+                        TwelveCamera.GetComponent<Camera>().enabled = false;*/
                     }
 
 
@@ -120,14 +120,14 @@ public class Camaras : MonoBehaviour {
                         SecondCamera.GetComponent<Camera>().enabled = true;
                         ThirdCamera.GetComponent<Camera>().enabled = false;
                         ForCamera.GetComponent<Camera>().enabled = false;
-                        FivCamera.GetComponent<Camera>().enabled = false;
-                        SixCamera.GetComponent<Camera>().enabled = false;
-                        SevenCamera.GetComponent<Camera>().enabled = false;
-                        EiCamera.GetComponent<Camera>().enabled = false;
-                        NainCamera.GetComponent<Camera>().enabled = false;
-                        TenCamera.GetComponent<Camera>().enabled = false;
-                        ElevenCamera.GetComponent<Camera>().enabled = false;
-                        TwelveCamera.GetComponent<Camera>().enabled = false;
+                        /* FivCamera.GetComponent<Camera>().enabled = false;
+                         SixCamera.GetComponent<Camera>().enabled = false;
+                         SevenCamera.GetComponent<Camera>().enabled = false;
+                         EiCamera.GetComponent<Camera>().enabled = false;
+                         NainCamera.GetComponent<Camera>().enabled = false;
+                         TenCamera.GetComponent<Camera>().enabled = false;
+                         ElevenCamera.GetComponent<Camera>().enabled = false;
+                         TwelveCamera.GetComponent<Camera>().enabled = false;*/
                     }
 
                     if (con == 2)
@@ -135,147 +135,147 @@ public class Camaras : MonoBehaviour {
                         FirstPCamera.GetComponent<Camera>().enabled = false;
                         SecondCamera.GetComponent<Camera>().enabled = false;
                         ThirdCamera.GetComponent<Camera>().enabled = false;
-                        ForCamera.GetComponent<Camera>().enabled = true;
-                        FivCamera.GetComponent<Camera>().enabled = false;
-                        SixCamera.GetComponent<Camera>().enabled = false;
-                        SevenCamera.GetComponent<Camera>().enabled = false;
-                        EiCamera.GetComponent<Camera>().enabled = false;
-                        NainCamera.GetComponent<Camera>().enabled = false;
-                        TenCamera.GetComponent<Camera>().enabled = false;
-                        ElevenCamera.GetComponent<Camera>().enabled = false;
-                        TwelveCamera.GetComponent<Camera>().enabled = false;
+                         ForCamera.GetComponent<Camera>().enabled = true;
+                        /* FivCamera.GetComponent<Camera>().enabled = false;
+                         SixCamera.GetComponent<Camera>().enabled = false;
+                         SevenCamera.GetComponent<Camera>().enabled = false;
+                         EiCamera.GetComponent<Camera>().enabled = false;
+                         NainCamera.GetComponent<Camera>().enabled = false;
+                         TenCamera.GetComponent<Camera>().enabled = false;
+                         ElevenCamera.GetComponent<Camera>().enabled = false;
+                         TwelveCamera.GetComponent<Camera>().enabled = false;*/
                     }
 
-                    if (con == 3)
-                    {
-                        FirstPCamera.GetComponent<Camera>().enabled = false;
-                        SecondCamera.GetComponent<Camera>().enabled = false;
-                        ThirdCamera.GetComponent<Camera>().enabled = false;
-                        ForCamera.GetComponent<Camera>().enabled = false;
-                        FivCamera.GetComponent<Camera>().enabled = true;
-                        SixCamera.GetComponent<Camera>().enabled = false;
-                        SevenCamera.GetComponent<Camera>().enabled = false;
-                        EiCamera.GetComponent<Camera>().enabled = false;
-                        NainCamera.GetComponent<Camera>().enabled = false;
-                        TenCamera.GetComponent<Camera>().enabled = false;
-                        ElevenCamera.GetComponent<Camera>().enabled = false;
-                        TwelveCamera.GetComponent<Camera>().enabled = false;
-                    }
+                    /* if (con == 3)
+                     {
+                         FirstPCamera.GetComponent<Camera>().enabled = false;
+                         SecondCamera.GetComponent<Camera>().enabled = false;
+                         ThirdCamera.GetComponent<Camera>().enabled = false;
+                         ForCamera.GetComponent<Camera>().enabled = false;
+                         FivCamera.GetComponent<Camera>().enabled = true;
+                         SixCamera.GetComponent<Camera>().enabled = false;
+                         SevenCamera.GetComponent<Camera>().enabled = false;
+                         EiCamera.GetComponent<Camera>().enabled = false;
+                         NainCamera.GetComponent<Camera>().enabled = false;
+                         TenCamera.GetComponent<Camera>().enabled = false;
+                         ElevenCamera.GetComponent<Camera>().enabled = false;
+                         TwelveCamera.GetComponent<Camera>().enabled = false;
+                     }
 
-                    if (con == 4)
-                    {
-                        FirstPCamera.GetComponent<Camera>().enabled = false;
-                        SecondCamera.GetComponent<Camera>().enabled = false;
-                        ThirdCamera.GetComponent<Camera>().enabled = false;
-                        ForCamera.GetComponent<Camera>().enabled = false;
-                        FivCamera.GetComponent<Camera>().enabled = false;
-                        SixCamera.GetComponent<Camera>().enabled = true;
-                        SevenCamera.GetComponent<Camera>().enabled = false;
-                        EiCamera.GetComponent<Camera>().enabled = false;
-                        NainCamera.GetComponent<Camera>().enabled = false;
-                        TenCamera.GetComponent<Camera>().enabled = false;
-                        ElevenCamera.GetComponent<Camera>().enabled = false;
-                        TwelveCamera.GetComponent<Camera>().enabled = false;
-                    }
+                     if (con == 4)
+                     {
+                         FirstPCamera.GetComponent<Camera>().enabled = false;
+                         SecondCamera.GetComponent<Camera>().enabled = false;
+                         ThirdCamera.GetComponent<Camera>().enabled = false;
+                         ForCamera.GetComponent<Camera>().enabled = false;
+                         FivCamera.GetComponent<Camera>().enabled = false;
+                         SixCamera.GetComponent<Camera>().enabled = true;
+                         SevenCamera.GetComponent<Camera>().enabled = false;
+                         EiCamera.GetComponent<Camera>().enabled = false;
+                         NainCamera.GetComponent<Camera>().enabled = false;
+                         TenCamera.GetComponent<Camera>().enabled = false;
+                         ElevenCamera.GetComponent<Camera>().enabled = false;
+                         TwelveCamera.GetComponent<Camera>().enabled = false;
+                     }
 
-                    if (con == 5)
-                    {
-                        FirstPCamera.GetComponent<Camera>().enabled = false;
-                        SecondCamera.GetComponent<Camera>().enabled = false;
-                        ThirdCamera.GetComponent<Camera>().enabled = false;
-                        ForCamera.GetComponent<Camera>().enabled = false;
-                        FivCamera.GetComponent<Camera>().enabled = false;
-                        SixCamera.GetComponent<Camera>().enabled = false;
-                        SevenCamera.GetComponent<Camera>().enabled = true;
-                        EiCamera.GetComponent<Camera>().enabled = false;
-                        NainCamera.GetComponent<Camera>().enabled = false;
-                        TenCamera.GetComponent<Camera>().enabled = false;
-                        ElevenCamera.GetComponent<Camera>().enabled = false;
-                        TwelveCamera.GetComponent<Camera>().enabled = false;
-                    }
+                     if (con == 5)
+                     {
+                         FirstPCamera.GetComponent<Camera>().enabled = false;
+                         SecondCamera.GetComponent<Camera>().enabled = false;
+                         ThirdCamera.GetComponent<Camera>().enabled = false;
+                         ForCamera.GetComponent<Camera>().enabled = false;
+                         FivCamera.GetComponent<Camera>().enabled = false;
+                         SixCamera.GetComponent<Camera>().enabled = false;
+                         SevenCamera.GetComponent<Camera>().enabled = true;
+                         EiCamera.GetComponent<Camera>().enabled = false;
+                         NainCamera.GetComponent<Camera>().enabled = false;
+                         TenCamera.GetComponent<Camera>().enabled = false;
+                         ElevenCamera.GetComponent<Camera>().enabled = false;
+                         TwelveCamera.GetComponent<Camera>().enabled = false;
+                     }
 
-                    if (con == 6)
-                    {
-                        FirstPCamera.GetComponent<Camera>().enabled = false;
-                        SecondCamera.GetComponent<Camera>().enabled = false;
-                        ThirdCamera.GetComponent<Camera>().enabled = false;
-                        ForCamera.GetComponent<Camera>().enabled = false;
-                        FivCamera.GetComponent<Camera>().enabled = false;
-                        SixCamera.GetComponent<Camera>().enabled = false;
-                        SevenCamera.GetComponent<Camera>().enabled = false;
-                        EiCamera.GetComponent<Camera>().enabled = true;
-                        NainCamera.GetComponent<Camera>().enabled = false;
-                        TenCamera.GetComponent<Camera>().enabled = false;
-                        ElevenCamera.GetComponent<Camera>().enabled = false;
-                        TwelveCamera.GetComponent<Camera>().enabled = false;
-                    }
+                     if (con == 6)
+                     {
+                         FirstPCamera.GetComponent<Camera>().enabled = false;
+                         SecondCamera.GetComponent<Camera>().enabled = false;
+                         ThirdCamera.GetComponent<Camera>().enabled = false;
+                         ForCamera.GetComponent<Camera>().enabled = false;
+                         FivCamera.GetComponent<Camera>().enabled = false;
+                         SixCamera.GetComponent<Camera>().enabled = false;
+                         SevenCamera.GetComponent<Camera>().enabled = false;
+                         EiCamera.GetComponent<Camera>().enabled = true;
+                         NainCamera.GetComponent<Camera>().enabled = false;
+                         TenCamera.GetComponent<Camera>().enabled = false;
+                         ElevenCamera.GetComponent<Camera>().enabled = false;
+                         TwelveCamera.GetComponent<Camera>().enabled = false;
+                     }
 
-                    if (con == 7)
-                    {
-                        FirstPCamera.GetComponent<Camera>().enabled = false;
-                        SecondCamera.GetComponent<Camera>().enabled = false;
-                        ThirdCamera.GetComponent<Camera>().enabled = false;
-                        ForCamera.GetComponent<Camera>().enabled = false;
-                        FivCamera.GetComponent<Camera>().enabled = false;
-                        SixCamera.GetComponent<Camera>().enabled = false;
-                        SevenCamera.GetComponent<Camera>().enabled = false;
-                        EiCamera.GetComponent<Camera>().enabled = false;
-                        NainCamera.GetComponent<Camera>().enabled = true;
-                        TenCamera.GetComponent<Camera>().enabled = false;
-                        ElevenCamera.GetComponent<Camera>().enabled = false;
-                        TwelveCamera.GetComponent<Camera>().enabled = false;
-                    }
+                     if (con == 7)
+                     {
+                         FirstPCamera.GetComponent<Camera>().enabled = false;
+                         SecondCamera.GetComponent<Camera>().enabled = false;
+                         ThirdCamera.GetComponent<Camera>().enabled = false;
+                         ForCamera.GetComponent<Camera>().enabled = false;
+                         FivCamera.GetComponent<Camera>().enabled = false;
+                         SixCamera.GetComponent<Camera>().enabled = false;
+                         SevenCamera.GetComponent<Camera>().enabled = false;
+                         EiCamera.GetComponent<Camera>().enabled = false;
+                         NainCamera.GetComponent<Camera>().enabled = true;
+                         TenCamera.GetComponent<Camera>().enabled = false;
+                         ElevenCamera.GetComponent<Camera>().enabled = false;
+                         TwelveCamera.GetComponent<Camera>().enabled = false;
+                     }
 
-                    if (con == 8)
-                    {
-                        FirstPCamera.GetComponent<Camera>().enabled = false;
-                        SecondCamera.GetComponent<Camera>().enabled = false;
-                        ThirdCamera.GetComponent<Camera>().enabled = false;
-                        ForCamera.GetComponent<Camera>().enabled = false;
-                        FivCamera.GetComponent<Camera>().enabled = false;
-                        SixCamera.GetComponent<Camera>().enabled = false;
-                        SevenCamera.GetComponent<Camera>().enabled = false;
-                        EiCamera.GetComponent<Camera>().enabled = false;
-                        NainCamera.GetComponent<Camera>().enabled = false;
-                        TenCamera.GetComponent<Camera>().enabled = true;
-                        ElevenCamera.GetComponent<Camera>().enabled = false;
-                        TwelveCamera.GetComponent<Camera>().enabled = false;
-                    }
+                     if (con == 8)
+                     {
+                         FirstPCamera.GetComponent<Camera>().enabled = false;
+                         SecondCamera.GetComponent<Camera>().enabled = false;
+                         ThirdCamera.GetComponent<Camera>().enabled = false;
+                         ForCamera.GetComponent<Camera>().enabled = false;
+                         FivCamera.GetComponent<Camera>().enabled = false;
+                         SixCamera.GetComponent<Camera>().enabled = false;
+                         SevenCamera.GetComponent<Camera>().enabled = false;
+                         EiCamera.GetComponent<Camera>().enabled = false;
+                         NainCamera.GetComponent<Camera>().enabled = false;
+                         TenCamera.GetComponent<Camera>().enabled = true;
+                         ElevenCamera.GetComponent<Camera>().enabled = false;
+                         TwelveCamera.GetComponent<Camera>().enabled = false;
+                     }
 
-                    if (con == 9)
-                    {
-                        FirstPCamera.GetComponent<Camera>().enabled = false;
-                        SecondCamera.GetComponent<Camera>().enabled = false;
-                        ThirdCamera.GetComponent<Camera>().enabled = false;
-                        ForCamera.GetComponent<Camera>().enabled = false;
-                        FivCamera.GetComponent<Camera>().enabled = false;
-                        SixCamera.GetComponent<Camera>().enabled = false;
-                        SevenCamera.GetComponent<Camera>().enabled = false;
-                        EiCamera.GetComponent<Camera>().enabled = false;
-                        NainCamera.GetComponent<Camera>().enabled = false;
-                        TenCamera.GetComponent<Camera>().enabled = false;
-                        ElevenCamera.GetComponent<Camera>().enabled = true;
-                        TwelveCamera.GetComponent<Camera>().enabled = false;
-                    }
+                     if (con == 9)
+                     {
+                         FirstPCamera.GetComponent<Camera>().enabled = false;
+                         SecondCamera.GetComponent<Camera>().enabled = false;
+                         ThirdCamera.GetComponent<Camera>().enabled = false;
+                         ForCamera.GetComponent<Camera>().enabled = false;
+                         FivCamera.GetComponent<Camera>().enabled = false;
+                         SixCamera.GetComponent<Camera>().enabled = false;
+                         SevenCamera.GetComponent<Camera>().enabled = false;
+                         EiCamera.GetComponent<Camera>().enabled = false;
+                         NainCamera.GetComponent<Camera>().enabled = false;
+                         TenCamera.GetComponent<Camera>().enabled = false;
+                         ElevenCamera.GetComponent<Camera>().enabled = true;
+                         TwelveCamera.GetComponent<Camera>().enabled = false;
+                     }
 
-                    if (con == 10)
-                    {
-                        FirstPCamera.GetComponent<Camera>().enabled = false;
-                        SecondCamera.GetComponent<Camera>().enabled = false;
-                        ThirdCamera.GetComponent<Camera>().enabled = false;
-                        ForCamera.GetComponent<Camera>().enabled = false;
-                        FivCamera.GetComponent<Camera>().enabled = false;
-                        SixCamera.GetComponent<Camera>().enabled = false;
-                        SevenCamera.GetComponent<Camera>().enabled = false;
-                        EiCamera.GetComponent<Camera>().enabled = false;
-                        NainCamera.GetComponent<Camera>().enabled = false;
-                        TenCamera.GetComponent<Camera>().enabled = false;
-                        ElevenCamera.GetComponent<Camera>().enabled = false;
-                        TwelveCamera.GetComponent<Camera>().enabled = true;
-                        
-                    }
+                     if (con == 10)
+                     {
+                         FirstPCamera.GetComponent<Camera>().enabled = false;
+                         SecondCamera.GetComponent<Camera>().enabled = false;
+                         ThirdCamera.GetComponent<Camera>().enabled = false;
+                         ForCamera.GetComponent<Camera>().enabled = false;
+                         FivCamera.GetComponent<Camera>().enabled = false;
+                         SixCamera.GetComponent<Camera>().enabled = false;
+                         SevenCamera.GetComponent<Camera>().enabled = false;
+                         EiCamera.GetComponent<Camera>().enabled = false;
+                         NainCamera.GetComponent<Camera>().enabled = false;
+                         TenCamera.GetComponent<Camera>().enabled = false;
+                         ElevenCamera.GetComponent<Camera>().enabled = false;
+                         TwelveCamera.GetComponent<Camera>().enabled = true;
 
-                   
+                     }
+                     */
+
                 }
 			}
 			
