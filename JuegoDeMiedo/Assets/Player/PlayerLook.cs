@@ -12,6 +12,8 @@ public class PlayerLook : MonoBehaviour
 
     private float xAxisClamp;
 
+    public bool menu = false;
+
     public bool agachado;
     //private PlayerMove agachando;
 
@@ -22,12 +24,21 @@ public class PlayerLook : MonoBehaviour
         //agachando = GetComponent<PlayerMove>();
     }
 
-    private void LockCursor()
+    public void LockCursor()
     {
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        menu = false;
     }
 
-	void Update ()
+    public void UnlockCursor()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        menu = true;
+    }
+
+    void Update ()
     {
         CameraRotation();
         Agachando();
@@ -83,6 +94,11 @@ public class PlayerLook : MonoBehaviour
 
     private void CameraRotation()
     {
+        if (menu)
+        {
+            return;
+        }
+
         float mouseX = Input.GetAxis(mouseXInputName) * mouseSensivity * Time.deltaTime;
         float mouseY = Input.GetAxis(mouseYInputName) * mouseSensivity * Time.deltaTime;
 

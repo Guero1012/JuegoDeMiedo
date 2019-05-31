@@ -8,6 +8,8 @@ public class TPCameraController : MonoBehaviour
     public Transform Target, Player;
     float mouseX, mouseY;
 
+    bool menu = false;
+
 	void Start ()
     {
         Cursor.visible = false;
@@ -19,8 +21,23 @@ public class TPCameraController : MonoBehaviour
         CanControl();
 	}
 
+    public void LockCursorTP()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        menu = false;
+    }
+
+    public void UnlockCursorTP()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        menu = true;
+    }
+
     void CanControl()
     {
+        if (menu) return;
         mouseX += Input.GetAxis("Mouse X") * RotationSpeed;
         mouseY -= Input.GetAxis("Mouse Y") * RotationSpeed;
         mouseY = Mathf.Clamp(mouseY, -35, 60);

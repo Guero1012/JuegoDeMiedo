@@ -73,7 +73,7 @@ public class LineManagement : MonoBehaviour {
     {
         if (cond == 0)
         {
-            Ritmo += Time.deltaTime * vel;
+            Ritmo += 0.01f * vel;
 
             if (Ritmo >= 0 && Ritmo <= 2)
             {
@@ -106,7 +106,7 @@ public class LineManagement : MonoBehaviour {
 
         else if (cond == 1)
         {
-            Ritmo += Time.deltaTime * vel;
+            Ritmo += 0.01f * vel;
 
             if (Ritmo >= 0 && Ritmo <= 2)
             {
@@ -147,7 +147,7 @@ public class LineManagement : MonoBehaviour {
     {
         if (cond2 == 0)
         {
-            Ritmo2 += Time.deltaTime * vel2;
+            Ritmo2 += 0.01f * vel2;
 
             if (Ritmo2 >= 0 && Ritmo2 <= 2)
             {
@@ -180,7 +180,7 @@ public class LineManagement : MonoBehaviour {
 
         else if (cond2 == 1)
         {
-            Ritmo2 += Time.deltaTime * vel2;
+            Ritmo2 += 0.01f * vel2;
 
             if (Ritmo2 >= 0 && Ritmo2 <= 2)
             {

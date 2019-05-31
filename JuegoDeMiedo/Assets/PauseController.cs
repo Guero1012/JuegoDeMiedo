@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class PauseController : MonoBehaviour {
 
-    public GameObject PanelCelular;
+    bool enMenu;
+
+    public GameObject Canvas1;
+
+    public GameObject MainCamera;
+    public GameObject Cam_Celular;
+
+    public TPCameraController pausarC;
 
 	// Use this for initialization
 	void Start () {
@@ -16,8 +23,32 @@ public class PauseController : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            PanelCelular.SetActive(true);
-            Time.timeScale = 0;
+            if (!enMenu)
+            {
+                pausarC.UnlockCursorTP();
+
+                //Canvas1.SetActive(false);
+
+                MainCamera.SetActive(false);
+                Cam_Celular.SetActive(true);
+
+                Time.timeScale = 0;
+
+                enMenu = true;
+            } else
+            {
+                pausarC.LockCursorTP();
+
+                //Canvas1.SetActive(false);
+
+                MainCamera.SetActive(true);
+                Cam_Celular.SetActive(false);
+
+                Time.timeScale = 1;
+
+                enMenu = false;
+            }
+            
         }
 	}
 }
