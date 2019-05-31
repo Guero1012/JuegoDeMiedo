@@ -92,11 +92,11 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1) && !jefe)
+        if (Input.GetKeyDown(KeyCode.Alpha2) && !jefe)
             RecibirDanio(vidaEnemigo);
 
-        if(Input.GetKeyDown(KeyCode.Alpha2) && jefe)
-            RecibirDanio(vidaEnemigo);
+        /*if(Input.GetKeyDown(KeyCode.Alpha3) && jefe)
+            RecibirDanio(vidaEnemigo);*/
     }
 
     void CambioDireccion()
