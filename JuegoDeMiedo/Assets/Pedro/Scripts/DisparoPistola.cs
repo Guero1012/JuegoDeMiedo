@@ -11,6 +11,6 @@ public class DisparoPistola : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(1))
-            Instantiate(prefapProjectil, instancia.transform.position, Quaternion.Euler(new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z)));
+            Instantiate(prefapProjectil, instancia.position, Quaternion.Euler(new Vector3(transform.eulerAngles.x+Random.Range(-5.0f,5.0f), transform.eulerAngles.y + Random.Range(-5.0f, 5.0f), transform.eulerAngles.z)));
     }
 }

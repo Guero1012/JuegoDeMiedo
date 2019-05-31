@@ -10,12 +10,14 @@ public var armas : Armas[];
 public var tamanoBoton : Vector2 = Vector2(50, 50);
 public var propagacion : float = 100;
 public var iconoEstilo : GUIStyle;
+//public var pistolaActiva : bool;
 
 private var armaSeleccionada : int;
 private var guiSettingsApplied : boolean;
 private var fxClamp : float;
 private var curFXFloat : float;
 private var buttonRect : Rect;
+
 
 function Start()
 {
@@ -34,6 +36,10 @@ function Update()
         else fxClamp = 0;
     }
     if(curFXFloat != fxClamp) curFXFloat = Mathf.MoveTowards(curFXFloat, fxClamp, Time.deltaTime * 5);
+
+    /*if (armas[4].activeSelf){
+        pistolaActiva = true;
+    }*/
 }
 
 function OnGUI()
