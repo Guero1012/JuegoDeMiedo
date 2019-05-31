@@ -14,7 +14,7 @@ public class PuertaEntrar : MonoBehaviour
         if (abrirP && Input.GetKeyDown(abrirKey))
         {
             texto.SetActive(false);
-            SceneManager.LoadScene("Dentro", LoadSceneMode.Single);
+            SceneManager.LoadScene(1, LoadSceneMode.Single);
         }
     }
 

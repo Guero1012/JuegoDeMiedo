@@ -51,7 +51,7 @@ public class EnemyController : MonoBehaviour
         {
             zombi.SetDestination(objetivo.position);
 
-            if (distancia <= zombi.stoppingDistance + 0.25f && !atacando) //Llegó con el jugador y lo ataca
+            if (distancia <= zombi.stoppingDistance + 0.25f && !atacando && vidaEnemigo <= 0) //Llegó con el jugador y lo ataca
             {
                 if(!jefe)
                     StartCoroutine(AtacarJugador());

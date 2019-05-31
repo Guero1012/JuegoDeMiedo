@@ -129,9 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56d405ecac5e4d247b2f8c899bef6eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 00
-  slots:
-  - {fileID: 692089977}
 --- !u!82 &96797943
 AudioSource:
   m_ObjectHideFlags: 0
@@ -843,6 +840,45 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1464316149613626, guid: ff35a640a1c8631499a3b0161c06bf1b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224410820102684440, guid: ff35a640a1c8631499a3b0161c06bf1b,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224410820102684440, guid: ff35a640a1c8631499a3b0161c06bf1b,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224410820102684440, guid: ff35a640a1c8631499a3b0161c06bf1b,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224410820102684440, guid: ff35a640a1c8631499a3b0161c06bf1b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 53.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 224410820102684440, guid: ff35a640a1c8631499a3b0161c06bf1b,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 219.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224410820102684440, guid: ff35a640a1c8631499a3b0161c06bf1b,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 36.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224410820102684440, guid: ff35a640a1c8631499a3b0161c06bf1b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000011444
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff35a640a1c8631499a3b0161c06bf1b, type: 2}
   m_IsPrefabAsset: 0
@@ -885,7 +921,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f82348ea2fcd24b82323608e081c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i: 0
 --- !u!114 &692089979
 MonoBehaviour:
   m_ObjectHideFlags: 0

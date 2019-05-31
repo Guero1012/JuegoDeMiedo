@@ -14,7 +14,7 @@ public class PuertaSalir : MonoBehaviour
         if(abrirP && Input.GetKeyDown(abrirKey))
         {
             texto.SetActive(false);
-            SceneManager.LoadScene("Fuera", LoadSceneMode.Single);
+            SceneManager.LoadScene(2, LoadSceneMode.Single);
         }
     }
 
