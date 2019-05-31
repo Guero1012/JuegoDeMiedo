@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1793473962470000}
+  m_IsPrefabAsset: 1
+--- !u!1 &1793473962470000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4920178866343888}
+  - component: {fileID: 65093153719147064}
+  - component: {fileID: 114634254696360336}
+  m_Layer: 0
+  m_Name: Control_camaras (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4920178866343888
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1793473962470000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.22, y: 4.93, z: -10.033}
+  m_LocalScale: {x: 3.1814895, y: 2.255106, z: 2.7459128}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65093153719147064
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1793473962470000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114634254696360336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1793473962470000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a277206ec5347469259cbce8d2d0a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirstPCamera: {fileID: 0}
+  SecondCamera: {fileID: 0}
+  ThirdCamera: {fileID: 0}
+  ForCamera: {fileID: 0}
+  FivCamera: {fileID: 0}
+  SixCamera: {fileID: 0}
+  SevenCamera: {fileID: 0}
+  EiCamera: {fileID: 0}
+  NainCamera: {fileID: 0}
+  TenCamera: {fileID: 0}
+  ElevenCamera: {fileID: 0}
+  TwelveCamera: {fileID: 0}
+  con: 0
+  guiObject: {fileID: 0}
+  Flashlight: {fileID: 0}
+  Script: {fileID: 0}
