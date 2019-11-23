@@ -38,7 +38,7 @@ public class PlayerMove : MonoBehaviour
 	public int cansado;
 	public float maxRes;
 	public bool caerse;
-	Animator anim;
+	public Animator anim;
 
     private void Awake()
     {
@@ -48,7 +48,7 @@ public class PlayerMove : MonoBehaviour
 		sonidito = GetComponent<AudioSource> ();
 		tired = true;
 		caerse = false;
-		anim = GetComponent<Animator> ();
+		//anim = GetComponent<Animator> ();
     }
 
     private void Update()
@@ -58,6 +58,37 @@ public class PlayerMove : MonoBehaviour
 		Stamina ();
 		Fall ();
 
+        Debug.Log("Algo");
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            anim.SetBool("camina", true);
+            
+        }
+        else
+        {
+            anim.SetBool("camina", false);
+        }
+
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
+        {
+            anim.SetBool("corre", true);
+
+        }
+        else
+        {
+            anim.SetBool("corre", false);
+        }
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            anim.SetTrigger("ataca");
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            anim.SetTrigger("tropieza");
+        }
     }
 
     private void Agachar()
