@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fuera.unity
     guid: 3fa9bcf4fcef7e84690156a1a0cb3789
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 8776983a566b28648b021da470c3327a
   m_configObjects: {}
