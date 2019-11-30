@@ -23,10 +23,6 @@ public class PlayerMove : MonoBehaviour
     private float movementSpeed;
     private bool isJumping;
 
-    public KeyCode agacharKey;
-    /*public bool yaAgachado;
-    public bool mantener;*/
-
 	public float resistencia = 0;
 	public bool tired;
 	public float targetTime = 1.0f; 
@@ -48,17 +44,13 @@ public class PlayerMove : MonoBehaviour
 		sonidito = GetComponent<AudioSource> ();
 		tired = true;
 		caerse = false;
-		//anim = GetComponent<Animator> ();
     }
 
     private void Update()
     {
         PlayerMovement();
-        Agachar();
 		Stamina ();
 		Fall ();
-
-        Debug.Log("Algo");
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -89,52 +81,6 @@ public class PlayerMove : MonoBehaviour
         {
             anim.SetTrigger("tropieza");
         }
-    }
-
-    private void Agachar()
-    {
-        if (Input.GetKey(agacharKey))
-        {
-            walkSpeed = 2;
-            runSpeed = 15;
-        }
-        else if (Input.GetKeyUp(agacharKey))
-        {
-            walkSpeed = 6;
-            runSpeed = 25;
-        }
-
-        /*if (!mantener)
-        {
-            if (Input.GetKey(agacharKey))
-            {
-                walkSpeed = 2;
-                runSpeed = 15;
-            }
-            else if (Input.GetKeyUp(agacharKey))
-            {
-                walkSpeed = 6;
-                runSpeed = 25;
-            }
-        }
-        else
-        {
-            if(Input.GetKeyDown(agacharKey))
-            {
-                if(!yaAgachado)
-                {
-                    walkSpeed = 2;
-                    runSpeed = 15;
-                    yaAgachado = true;
-                }
-                else
-                {
-                    walkSpeed = 6;
-                    runSpeed = 25;
-                    yaAgachado = false;
-                }
-            }
-        }*/
     }
 
 	private void Fall()
