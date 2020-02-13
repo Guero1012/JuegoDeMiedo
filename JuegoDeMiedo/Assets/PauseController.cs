@@ -25,7 +25,7 @@ public class PauseController : MonoBehaviour {
         {
             if (!enMenu)
             {
-                pausarC.UnlockCursorTP();
+                //pausarC.UnlockCursorTP();
 
                 //Canvas1.SetActive(false);
 
@@ -37,7 +37,7 @@ public class PauseController : MonoBehaviour {
                 enMenu = true;
             } else
             {
-                pausarC.LockCursorTP();
+                //pausarC.LockCursorTP();
 
                 //Canvas1.SetActive(false);
 
